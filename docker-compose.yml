@@ -1,0 +1,11 @@
+version: '3'
+services:
+  db:
+    build: ./mariadb
+    ports:
+      - "3306:3306"
+  magento:
+    build: ./magento
+    ports:
+      - "80:80"
+    entrypoint: /usr/sbin/httpd -DFOREGROUND
